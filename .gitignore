@@ -1,0 +1,16 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs and backup files
+crash.log
+*.tf.backup
+
+# Local Terraform directories
+.terraform/
+.terraform.lock.hcl  # (optional – keep this if you want reproducible builds)
+
+# Plan files
+*.tfplan
+
+node_modules/
