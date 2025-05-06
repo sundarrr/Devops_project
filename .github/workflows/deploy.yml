@@ -77,6 +77,8 @@ jobs:
           with:
             host: ${{env.SERVER_PUBLIC_IP}}
             username: ubuntu
+            source: "./nodeapp/*"
+            target: "/home/ubuntu/"
             key: ${{env.PRIVATE_SSH_KEY}}
             envs: PRIVATE_SSH_KEY,REGISTRY,IMAGE_TAG,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_DEFAULT_REGION,AWS_REGION
             scripts: |-
