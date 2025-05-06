@@ -69,7 +69,7 @@ jobs:
           working-directory: ./nodeapp
         - name: Deploy docker image to EC2
           env:
-            REGISTRY: ${{ steps.login.ecr.outputs.registry}}
+            REGISTRY: ${{ steps.login-ecr.outputs.registry}}
             REPOSITORY: example-node-app
             IMAGE_TAG: ${{ github.sha }}
             AWS_DEFAULT_REGION: us-east-1 
@@ -81,7 +81,7 @@ jobs:
             envs: PRIVATE_SSH_KEY,REGISTRY,IMAGE_TAG,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_DEFAULT_REGION,AWS_REGION
             scripts: |-
               sudo apt update
-              sudo apt install dockere.io -y
+              sudo apt install docker.io -y
               sudo apt install awscli -y
               sudo ${aws ecr get-login --no-include-email --region us-east-1};
               sudo docker stop myappcontainer || true
