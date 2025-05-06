@@ -64,6 +64,7 @@ jobs:
             IMAGE_TAG: ${{ github.sha }}
             AWS_DEFAULT_REGION: us-east-1
           run: |-
+            echo ${REGISTRY}
             echo "Building image: $REGISTRY/$REPOSITORY:$IMAGE_TAG"
             docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
             docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
