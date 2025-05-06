@@ -4,7 +4,8 @@ variable region{
 variable "public_key" {
 }
 variable "private_key" {
+    default = file("~/.ssh/deployer.pub")
 }
 variable "key_name" {
-    
+    default = "deployer"
 }
